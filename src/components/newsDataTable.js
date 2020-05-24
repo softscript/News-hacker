@@ -28,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
 
 const tableData = (props) => {
   const rows = _.get(props, "data.hits", []);
+  const currentPage =  _.get(props, "data.page", 0);
+  const totalPage =  _.get(props, "data.nbPages", 0);
   const hiddenNewsIds = _.get(props, "hiddenNewsId", []);
   const classes = useStyles();
 
@@ -36,15 +38,15 @@ const tableData = (props) => {
       if (!hiddenNewsIds.includes(row.objectID)) {
         return (
           <TableRow key={index}>
-            <TableCell>{index + 1}</TableCell>
             <TableCell align="left">{row.num_comments}</TableCell>
             <TableCell align="left">
-              {props.voteCountObj[row.objectID] || 0}
+              {(props.voteCountObj && props.voteCountObj[row.objectID]) || 0}
             </TableCell>
-            <TableCell align="left">
+            <TableCell align="left"
+            className="clickable"
+            onClick={() => props.handleUpVote(row.objectID)}
+            >
               <img
-                className="clickable"
-                onClick={() => props.handleUpVote(row.objectID)}
                 src={upVoteIcon}
                 alt="bb"
               ></img>
@@ -71,7 +73,6 @@ const tableData = (props) => {
             <Table className={classes.table}>
               <TableHead className="table-head">
                 <TableRow className="table-head-cell">
-                  <TableCell align="left">SL No.</TableCell>
                   <TableCell align="left">Comments</TableCell>
                   <TableCell align="left">Vote Count</TableCell>
                   <TableCell align="left">Up Vote</TableCell>
@@ -85,7 +86,7 @@ const tableData = (props) => {
 
         {dataRows&&<Grid item xs={12} sm={12}>
           <Box>
-            <TablePagination handlePagination={props.handlePagination} />
+            <TablePagination handlePagination={props.handlePagination} currentPage={currentPage} totalPage={totalPage} />
           </Box>
         </Grid>}
       </Grid>

@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
 
 const pagination = (props) => {
     const classes = useStyles();
-
+    const isPreviewDisable = props.currentPage === 0 ? true : false;
+    const isNextDisable = props.currentPage === props.totalPage ? true : false;
     return (
         <div className={classes.root}>
             <Grid
@@ -26,9 +27,9 @@ const pagination = (props) => {
             >
                 <Grid item xs={12} className='preview-next-btn' >
                     <ul className="ul-action-bt">
-                        <li><Button color="secondary" onClick={() => props.handlePagination(COMMON_CONSTANT.PREVIEW)}> {COMMON_CONSTANT.PREVIEW}</Button></li>
+                        <li><Button color="secondary" disabled={isPreviewDisable} onClick={() => props.handlePagination(COMMON_CONSTANT.PREVIEW)}> {COMMON_CONSTANT.PREVIEW}</Button></li>
                         <li>|</li>
-                        <li><Button color="secondary" onClick={() => props.handlePagination(COMMON_CONSTANT.NEXT)}>{COMMON_CONSTANT.NEXT}</Button></li>
+                        <li><Button color="secondary" disabled={isNextDisable} onClick={() => props.handlePagination(COMMON_CONSTANT.NEXT)}>{COMMON_CONSTANT.NEXT}</Button></li>
                     </ul>
                 </Grid>
 

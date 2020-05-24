@@ -1,6 +1,5 @@
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const ADD = 'ADD';
-export const SUBTRACT = 'SUBTRACT';
-export const STORE_RESULT = 'STORE_RESULT';
-export const DELETE_RESULT = 'DELETE_RESULT';
+export const ACTION_TYPE = 'ACTION_TYPE';
+export const ACTION_TYPE1 = 'ACTION_TYPE1';
+export const ACTION_TYPE2 = 'ACTION_TYPE2';
+export const ACTION_TYPE3= 'ACTION_TYPE3';
+

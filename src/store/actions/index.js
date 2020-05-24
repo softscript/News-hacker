@@ -1,10 +1,6 @@
 export {
-    add,
-    subtract,
-    increment,
-    decrement
-} from './counter';
+    dummyAction1
+} from './action1';
 export {
-    storeResult,
-    deleteResult
-} from './result';
+    dummyAction2
+} from './action2';

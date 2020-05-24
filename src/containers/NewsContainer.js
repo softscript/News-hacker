@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getHackerNews } from '../api-services/getHackerNewsApi';
-import NewsTable from '../components/dataTable';
+import NewsTable from '../components/newsDataTable';
 import { COMMON_CONSTANT } from './../constant/constant'
 import _ from 'lodash'
 import history from '../history';
@@ -16,10 +16,8 @@ class HackerNewsList extends Component {
         loader: false
     }
     async componentDidMount() {
-        console.log(`-----params----------${JSON.stringify(this.props.match.params)}`)
-        console.log(`---------------${this.state.page}`)
-        await this.getNewsList({ page: this.state.page })
 
+        await this.getNewsList({ page: this.state.page })
         let getVoteObt = localStorage.getItem('setUpVote') || null;
         let hiddenNewsId = localStorage.getItem('hidedIds') || [];
         if (getVoteObt) {
@@ -33,7 +31,6 @@ class HackerNewsList extends Component {
     }
 
     getNewsList = async (query = {}) => {
-        console.log(`-----query----------${JSON.stringify(query)}`)
         this.callLoader(true)
         const result = await getHackerNews(query);
         if (result.data) {
@@ -90,7 +87,7 @@ class HackerNewsList extends Component {
         let totalPages = _.get(this.state, 'data.nbPages', 0);
         let updatedPage = currentPage
         if (actionType === COMMON_CONSTANT.NEXT && currentPage < totalPages) {
-            updatedPage = parseInt(currentPage)+COMMON_CONSTANT.INC_BY
+            updatedPage = (parseInt(currentPage)+COMMON_CONSTANT.INC_BY);
             await this.getNewsList({ page:updatedPage })
             history.push(`/page/${updatedPage}`)
            
@@ -101,6 +98,14 @@ class HackerNewsList extends Component {
         } else {
             await this.getNewsList({ page: currentPage })
         }
+        this.callLoader(false)
+    }
+
+    resetData = async () =>{
+        this.callLoader(true)
+        localStorage.setItem('hidedIds', false);
+        localStorage.setItem('setUpVote', false);
+        history.push(`/page/${this.state.page}`)
         this.callLoader(false)
     }
 
@@ -117,6 +122,7 @@ class HackerNewsList extends Component {
                 handlePagination={this.handlePagination}
             />
                 {this.state.loader &&<Loader></Loader>}
+                <a style={{color:'red', cursor:'pointer'}} className="reset" onClick = {this.resetData}>Reset Data</a>
             </React.Fragment>
             
         )

@@ -4,14 +4,14 @@ import './App.css';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import counterReducer from './store/reducers/counter';
-import resultReducer from './store/reducers/result';
+import reducerOne from './store/reducers/reducer1';
+import reducerTwo from './store/reducers/reducer2';
 import './index.css';
 import Routes from './Routes.js';
 
 const rootReducer = combineReducers({
-  ctr: counterReducer,
-  res: resultReducer
+  one: reducerOne,
+  two: reducerTwo
 });
 
 const logger = store => {
