@@ -23,6 +23,9 @@
 }
 .update-created-on{
     margin: 0px 5px 0px 5px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 7pt;
+    color: #828282;
 }
 
 .action-hide{
@@ -54,4 +57,12 @@
 .ul-action-bt li button{
     text-transform: capitalize;
     font-weight: bolder;
+}
+
+.thin-hr hr{
+    border: 2px solid red;
+}
+
+.thick-hr hr{
+    border: 4px solid red;
 }
