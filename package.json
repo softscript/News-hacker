@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "@material-ui/core": "^4.9.14",
     "axios": "^0.19.2",
     "create-react-app": "^3.4.1",
     "history": "^4.10.1",
-    "jest-localstorage-mock": "^2.4.2",
     "lodash": "^4.17.15",
     "moment": "^2.26.0",
     "node-sass": "^4.14.1",
@@ -23,13 +23,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test:coverage": "react-scripts test --coverage",
+    "test:coverage": "react-scripts test --env=jsdom -u --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.4"
+    "enzyme-to-json": "^3.4.4",
+    "handlebars": "^4.5.0"
   },
   "jest": {
     "snapshotSerializers": [
@@ -46,5 +47,8 @@
   },
   "setupFiles": [
     "src/test/setupTests.js"
-  ]
+  ],
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
+  }
 }

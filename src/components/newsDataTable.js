@@ -31,7 +31,6 @@ const tableData = (props) => {
   const currentPage = _.get(props, "data.page", 0);
   const totalPage = _.get(props, "data.nbPages", 0);
   const hiddenNewsIds = _.get(props, "hiddenNewsId", []);
-  console.log(`----------------`, props.hiddenNewsIds)
   const classes = useStyles();
 
   let dataRows = _.compact(

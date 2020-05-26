@@ -73,5 +73,4 @@ describe('Testing Table pagination action button', () => {
     let wrapped = shallow(<HackerNewsTable {...props}/>);
     expect(wrapped.exists()).toBe(true);
   })
-
 });

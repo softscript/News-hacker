@@ -37,6 +37,8 @@ class HackerNewsList extends Component {
             this.setState({
                 data: result.data
             })
+        }else{
+            console.log(`---failed`)
         }
         
     }

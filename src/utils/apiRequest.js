@@ -9,12 +9,12 @@ const apiRequest = function (options) {
   const onError = function (error) {
     if (error.response)
       // some error happened with the server side
-      console.log(error.response);
-    else {
+       console.log(error.response);
+    else 
       // some error happened while processing the request
       console.error('Error Message:', error.message);
       return Promise.reject(error.response || error.message);
-    }
+    
   };
 
   // accessing the access token from the auth reducer
