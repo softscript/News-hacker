@@ -29,12 +29,15 @@ my-app/
   node_modules/
   package.json
   public/
-    index.html
-    favicon.ico
+    .....
   src/
-    App.css
+    api-config/
+             ...........
     App.js
     App.test.js
+    assets/
+    component/
+    container/
     index.css
     index.js
     logo.svg
@@ -68,11 +71,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test -- -u --coverage --watchAll=false`
 
 Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](#running-tests) for more information.
-
+Test cover can be seen on <app>/coverage/index.html
+  In case there is error like  "Handlebars: Access has been denied to resolve the property"...
+  please run below command
+  ## npm i -D handlebars@4.5.0
+  
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
