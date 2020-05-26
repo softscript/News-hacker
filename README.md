@@ -72,12 +72,15 @@ The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
 ### `npm run test -- -u --coverage --watchAll=false`
+or
+### `npm run test:coverage`
 
 Launches the test runner in the interactive watch mode.<br>
 Test cover can be seen on <app>/coverage/index.html
-  In case there is error like  "Handlebars: Access has been denied to resolve the property"...
+  In case there is error like  
+  #### "Handlebars: Access has been denied to resolve the property"...
   please run below command
-  ## npm i -D handlebars@4.5.0
+  #### npm i -D handlebars@4.5.0
   
 ### `npm run build`
 
