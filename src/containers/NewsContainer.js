@@ -18,7 +18,7 @@ class HackerNewsList extends Component {
     async componentDidMount() {
 
         await this.getNewsList({ page: this.state.page })
-        let getVoteObt = localStorage.getItem('setUpVote') || null;
+        let getVoteObt = localStorage.getItem('upVoteData') || null;
         let hiddenNewsId = localStorage.getItem('hidedIds') || [];
         if (getVoteObt) {
             let getVoteCounts = JSON.parse(getVoteObt)
@@ -49,7 +49,7 @@ class HackerNewsList extends Component {
 
     handleUpVote = async (id) => {
         let getVoteCounts = this.state.voteCountObj
-        let getVoteObt = localStorage.getItem('setUpVote') || null;
+        let getVoteObt = localStorage.getItem('upVoteData') || null;
         if (getVoteObt) {
             getVoteCounts = JSON.parse(getVoteObt)
             getVoteCounts = {
@@ -61,7 +61,7 @@ class HackerNewsList extends Component {
                 [id]: 1
             }
         }
-        localStorage.setItem('setUpVote', JSON.stringify(getVoteCounts));
+        localStorage.setItem('upVoteData', JSON.stringify(getVoteCounts));
         this.setState({
             voteCountObj: getVoteCounts
         })
@@ -85,26 +85,31 @@ class HackerNewsList extends Component {
     handlePagination = async (actionType) => {
         let currentPage = this.state.page;
         let totalPages = _.get(this.state, 'data.nbPages', 0);
-        let updatedPage = currentPage
+        let updatedPage = currentPage;
+     
         if (actionType === COMMON_CONSTANT.NEXT && currentPage < totalPages) {
             updatedPage = (parseInt(currentPage)+COMMON_CONSTANT.INC_BY);
+            this.setState({
+                page: updatedPage
+            })
             await this.getNewsList({ page:updatedPage })
             history.push(`/page/${updatedPage}`)
            
-        } else if (actionType === COMMON_CONSTANT.PREVIEW && currentPage > 0) {
-            updatedPage = parseInt(currentPage)-COMMON_CONSTANT.DEC_BY
+        } else if (actionType === COMMON_CONSTANT.PREVIOUS && currentPage > 0) {
+            updatedPage = parseInt(currentPage)-COMMON_CONSTANT.DEC_BY;
+            this.setState({
+                page: updatedPage
+            })
             await this.getNewsList({ page: updatedPage })
             history.push(`/page/${updatedPage}`)
         } else {
             await this.getNewsList({ page: currentPage })
         }
-        this.callLoader(false)
     }
 
     resetData = async () =>{
         this.callLoader(true)
-        localStorage.setItem('hidedIds', false);
-        localStorage.setItem('setUpVote', false);
+        localStorage.clear();
         history.push(`/page/${this.state.page}`)
         this.callLoader(false)
     }
@@ -120,6 +125,7 @@ class HackerNewsList extends Component {
                 handleHideNews={this.handleHideNews}
                 hiddenNewsId={this.state.hiddenNewsId}
                 handlePagination={this.handlePagination}
+                loader={this.state.loader}
             />
                 {this.state.loader &&<Loader></Loader>}
                 <a style={{color:'red', cursor:'pointer'}} className="reset" onClick = {this.resetData}>Reset Data</a>

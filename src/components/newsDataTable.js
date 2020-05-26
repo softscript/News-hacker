@@ -28,9 +28,10 @@ const useStyles = makeStyles((theme) => ({
 
 const tableData = (props) => {
   const rows = _.get(props, "data.hits", []);
-  const currentPage =  _.get(props, "data.page", 0);
-  const totalPage =  _.get(props, "data.nbPages", 0);
+  const currentPage = _.get(props, "data.page", 0);
+  const totalPage = _.get(props, "data.nbPages", 0);
   const hiddenNewsIds = _.get(props, "hiddenNewsId", []);
+  console.log(`----------------`, props.hiddenNewsIds)
   const classes = useStyles();
 
   let dataRows = _.compact(
@@ -43,8 +44,8 @@ const tableData = (props) => {
               {(props.voteCountObj && props.voteCountObj[row.objectID]) || 0}
             </TableCell>
             <TableCell align="left"
-            className="clickable"
-            onClick={() => props.handleUpVote(row.objectID)}
+              className="clickable"
+              onClick={() => props.handleUpVote(row.objectID)}
             >
               <img
                 src={upVoteIcon}
@@ -67,7 +68,7 @@ const tableData = (props) => {
 
   return (
     <React.Fragment>
-      <Grid container>
+      {!props.loader && <Grid container>
         <Grid item xs={12} sm={12}>
           <Paper className={classes.root}>
             <Table className={classes.table}>
@@ -84,24 +85,26 @@ const tableData = (props) => {
           </Paper>
         </Grid>
 
-        {dataRows&&<Grid item xs={12} sm={12}>
+        {dataRows && <Grid item xs={12} sm={12}>
           <Box>
             <TablePagination handlePagination={props.handlePagination} currentPage={currentPage} totalPage={totalPage} />
           </Box>
         </Grid>}
       </Grid>
-      <Grid item xs={12} sm={12} className="thin-hr">
+      }
+      {!props.loader && <Grid item xs={12} sm={12} className="thin-hr">
         <hr></hr>
-      </Grid>
+      </Grid>}
       {rows && <Grid item xs={12} sm={12}>
         <Box>
           <Graph {...props} />
         </Box>
       </Grid>
-}
-      <Grid item xs={12} sm={12} className="thick-hr">
+      }
+      {!props.loader && <Grid item xs={12} sm={12} className="thick-hr">
         <hr></hr>
       </Grid>
+      }
     </React.Fragment>
   );
 };

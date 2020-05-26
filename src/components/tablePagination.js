@@ -25,9 +25,9 @@ const pagination = (props) => {
                 alignItems="center"
                 className="pagination-sec"
             >
-                <Grid item xs={12} className='preview-next-btn' >
+                <Grid item xs={12} className='PREVIOUS-next-btn' >
                     <ul className="ul-action-bt">
-                        <li><Button color="secondary" disabled={isPreviewDisable} onClick={() => props.handlePagination(COMMON_CONSTANT.PREVIEW)}> {COMMON_CONSTANT.PREVIEW}</Button></li>
+                        <li><Button color="secondary" disabled={isPreviewDisable} onClick={() => props.handlePagination(COMMON_CONSTANT.PREVIOUS)}> {COMMON_CONSTANT.PREVIOUS}</Button></li>
                         <li>|</li>
                         <li><Button color="secondary" disabled={isNextDisable} onClick={() => props.handlePagination(COMMON_CONSTANT.NEXT)}>{COMMON_CONSTANT.NEXT}</Button></li>
                     </ul>

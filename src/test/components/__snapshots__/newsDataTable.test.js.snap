@@ -1,0 +1,324 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Table pagination action button should render the Title Component correctly 1`] = `
+<Fragment>
+  <WithStyles(ForwardRef(Grid))
+    container={true}
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      sm={12}
+      xs={12}
+    >
+      <WithStyles(ForwardRef(Paper))
+        className="makeStyles-root-1"
+      >
+        <WithStyles(ForwardRef(Table))
+          className="makeStyles-table-2"
+        >
+          <WithStyles(ForwardRef(TableHead))
+            className="table-head"
+          >
+            <WithStyles(ForwardRef(TableRow))
+              className="table-head-cell"
+            >
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                Comments
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                Vote Count
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                Up Vote
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                News Details
+              </WithStyles(ForwardRef(TableCell))>
+            </WithStyles(ForwardRef(TableRow))>
+          </WithStyles(ForwardRef(TableHead))>
+          <WithStyles(ForwardRef(TableBody))>
+            <WithStyles(ForwardRef(TableRow))
+              key="0"
+            >
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                485
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                0
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+                className="clickable"
+                onClick={[Function]}
+              >
+                <img
+                  alt="bb"
+                  src="grayArrow.gif"
+                />
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                <newDetails
+                  rowData={
+                    Object {
+                      "_highlightResult": Object {
+                        "author": Object {
+                          "matchLevel": "none",
+                          "matchedWords": Array [],
+                          "value": "pfg",
+                        },
+                        "title": Object {
+                          "matchLevel": "none",
+                          "matchedWords": Array [],
+                          "value": "Announcing the first SHA-1 collision",
+                        },
+                        "url": Object {
+                          "matchLevel": "none",
+                          "matchedWords": Array [],
+                          "value": "https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html",
+                        },
+                      },
+                      "_tags": Array [
+                        "story",
+                        "author_pfg",
+                        "story_13713480",
+                      ],
+                      "author": "pfg",
+                      "comment_text": null,
+                      "created_at": "2017-02-23T13:01:08.000Z",
+                      "created_at_i": 1487854868,
+                      "num_comments": 485,
+                      "objectID": "13713480",
+                      "parent_id": null,
+                      "points": 3030,
+                      "relevancy_score": 7272,
+                      "story_id": null,
+                      "story_text": null,
+                      "story_title": null,
+                      "story_url": null,
+                      "title": "Announcing the first SHA-1 collision",
+                      "url": "https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html",
+                    }
+                  }
+                />
+              </WithStyles(ForwardRef(TableCell))>
+            </WithStyles(ForwardRef(TableRow))>
+            <WithStyles(ForwardRef(TableRow))
+              key="1"
+            >
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                485
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                0
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+                className="clickable"
+                onClick={[Function]}
+              >
+                <img
+                  alt="bb"
+                  src="grayArrow.gif"
+                />
+              </WithStyles(ForwardRef(TableCell))>
+              <WithStyles(ForwardRef(TableCell))
+                align="left"
+              >
+                <newDetails
+                  rowData={
+                    Object {
+                      "_highlightResult": Object {
+                        "author": Object {
+                          "matchLevel": "none",
+                          "matchedWords": Array [],
+                          "value": "pfg",
+                        },
+                        "title": Object {
+                          "matchLevel": "none",
+                          "matchedWords": Array [],
+                          "value": "Announcing the first SHA-1 collision",
+                        },
+                        "url": Object {
+                          "matchLevel": "none",
+                          "matchedWords": Array [],
+                          "value": "https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html",
+                        },
+                      },
+                      "_tags": Array [
+                        "story",
+                        "author_pfg",
+                        "story_13713480",
+                      ],
+                      "author": "pfg",
+                      "comment_text": null,
+                      "created_at": "2017-02-23T13:01:08.000Z",
+                      "created_at_i": 1487854868,
+                      "num_comments": 485,
+                      "objectID": "13713480",
+                      "parent_id": null,
+                      "points": 3030,
+                      "relevancy_score": 7272,
+                      "story_id": null,
+                      "story_text": null,
+                      "story_title": null,
+                      "story_url": null,
+                      "title": "Announcing the first SHA-1 collision",
+                      "url": "https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html",
+                    }
+                  }
+                />
+              </WithStyles(ForwardRef(TableCell))>
+            </WithStyles(ForwardRef(TableRow))>
+          </WithStyles(ForwardRef(TableBody))>
+        </WithStyles(ForwardRef(Table))>
+      </WithStyles(ForwardRef(Paper))>
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      sm={12}
+      xs={12}
+    >
+      <Styled(MuiBox)>
+        <pagination
+          currentPage={0}
+          totalPage={2}
+        />
+      </Styled(MuiBox)>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    className="thin-hr"
+    item={true}
+    sm={12}
+    xs={12}
+  >
+    <hr />
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    sm={12}
+    xs={12}
+  >
+    <Styled(MuiBox)>
+      <VotingChart
+        data={
+          Object {
+            "hits": Array [
+              Object {
+                "_highlightResult": Object {
+                  "author": Object {
+                    "matchLevel": "none",
+                    "matchedWords": Array [],
+                    "value": "pfg",
+                  },
+                  "title": Object {
+                    "matchLevel": "none",
+                    "matchedWords": Array [],
+                    "value": "Announcing the first SHA-1 collision",
+                  },
+                  "url": Object {
+                    "matchLevel": "none",
+                    "matchedWords": Array [],
+                    "value": "https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html",
+                  },
+                },
+                "_tags": Array [
+                  "story",
+                  "author_pfg",
+                  "story_13713480",
+                ],
+                "author": "pfg",
+                "comment_text": null,
+                "created_at": "2017-02-23T13:01:08.000Z",
+                "created_at_i": 1487854868,
+                "num_comments": 485,
+                "objectID": "13713480",
+                "parent_id": null,
+                "points": 3030,
+                "relevancy_score": 7272,
+                "story_id": null,
+                "story_text": null,
+                "story_title": null,
+                "story_url": null,
+                "title": "Announcing the first SHA-1 collision",
+                "url": "https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html",
+              },
+              Object {
+                "_highlightResult": Object {
+                  "author": Object {
+                    "matchLevel": "none",
+                    "matchedWords": Array [],
+                    "value": "pfg",
+                  },
+                  "title": Object {
+                    "matchLevel": "none",
+                    "matchedWords": Array [],
+                    "value": "Announcing the first SHA-1 collision",
+                  },
+                  "url": Object {
+                    "matchLevel": "none",
+                    "matchedWords": Array [],
+                    "value": "https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html",
+                  },
+                },
+                "_tags": Array [
+                  "story",
+                  "author_pfg",
+                  "story_13713480",
+                ],
+                "author": "pfg",
+                "comment_text": null,
+                "created_at": "2017-02-23T13:01:08.000Z",
+                "created_at_i": 1487854868,
+                "num_comments": 485,
+                "objectID": "13713480",
+                "parent_id": null,
+                "points": 3030,
+                "relevancy_score": 7272,
+                "story_id": null,
+                "story_text": null,
+                "story_title": null,
+                "story_url": null,
+                "title": "Announcing the first SHA-1 collision",
+                "url": "https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html",
+              },
+            ],
+            "hitsPerPage": 20,
+            "nbHits": 21597938,
+            "nbPages": 2,
+            "page": 0,
+          }
+        }
+        hiddenNewsIds={Array []}
+        page={0}
+      />
+    </Styled(MuiBox)>
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    className="thick-hr"
+    item={true}
+    sm={12}
+    xs={12}
+  >
+    <hr />
+  </WithStyles(ForwardRef(Grid))>
+</Fragment>
+`;
