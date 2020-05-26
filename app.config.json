@@ -2,7 +2,7 @@
     "apps" : [
       {
         "name"      : "news-hacker",
-        "script"    : "npx",
+        "script"    : "react-scripts start",
         "interpreter": "none",
         "args": "serve -p 8443 -T"
       }
